@@ -4,5 +4,26 @@
 
 /* 🎨 Personnalisation Cyberpunk */
 body {
-  @apply bg-black text-green-600 font-mono;
+  @apply bg-black text-green-400 font-mono;
+}
+
+/* Effet néon sur le texte */
+.text-neon {
+  text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e;
+}
+
+/* Style des boutons */
+.btn {
+  @apply px-6 py-2 border border-green-500 text-green-400 font-bold rounded-lg 
+         hover:bg-green-500 hover:text-black transition;
+}
+
+/* Effet Matrix */
+.matrix-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('/public/matrix-bg.gif') repeat;
+  opacity: 0.1;
+  z-index: -1;
 }
