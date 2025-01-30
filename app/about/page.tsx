@@ -1,7 +1,11 @@
 export default function About() {
     return (
       <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-        <h1 className="text-5xl font-bold text-green-400 text-neon">À propos de moi</h1>
+      <h1 className="hero glitch layers" data-text="A propos de moi">
+  <span>A propos de moi</span>
+</h1>
+
+        
   
         {/* Présentation */}
         <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-6">
