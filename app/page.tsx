@@ -1,8 +1,8 @@
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-      <h1 className="text-9xl font-bold text-green-400 glitch" data-text="Maxwell-Cyber">
-  Maxwell-Cyber
+      <h1 className="hero glitch layers" data-text="Maxwell-Cyber">
+  <span>Maxwell-cyber</span>
 </h1>
 
       <p className="mt-4 text-lg text-gray-300 max-w-2xl">
