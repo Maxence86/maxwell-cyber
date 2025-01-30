@@ -1,9 +1,9 @@
 export default function Portfolio() {
     return (
       <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-        <h1 className="text-5xl font-bold text-green-400 text-neon" data-text="Portfolio">Portfolio</h1>
+        <h1 className="text-5xl font-bold text-green-400 hero glitch layers" data-text="Portfolio">Portfolio</h1>
   
-        <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-6">
+        <div className="mt-16 text-left max-w-3xl text-gray-300 space-y-6">
           <p>📂 Voici quelques projets sur lesquels j’ai travaillé :</p>
   
           {/* Projets */}

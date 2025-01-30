@@ -13,11 +13,12 @@ export default function Contact() {
     setError("");
     setMessageSent(false);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.target as HTMLFormElement; // Récupération du formulaire avant l'attente
+    const formData = new FormData(form);
     const jsonData = {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        message: formData.get("message"),
+      name: formData.get("name"),
+      email: formData.get("email"),
+      message: formData.get("message"),
     };
 
     try {
@@ -30,28 +31,27 @@ export default function Contact() {
         });
 
         const result = await response.json();
-        console.log("Réponse API:", result); // <-- Ajoute ce log pour voir la réponse
+        console.log("Réponse API:", result);
 
-        if (result.success) {
-            setMessageSent(true);
-            e.currentTarget.reset();
-        } else {
-            setError(result.message);
+        if (!response.ok) {
+            throw new Error(result.message || "Une erreur est survenue.");
         }
-    } catch (err) {
-        setError("❌ Erreur réseau. Vérifiez votre connexion.");
+
+        setMessageSent(true);
+        form.reset(); // Utilisation de form.reset() au lieu de e.currentTarget.reset()
+    } catch (err: any) {
+        console.error("Erreur Formulaire:", err);
+        setError(err.message || "❌ Erreur réseau. Vérifiez votre connexion.");
     } finally {
         setLoading(false);
     }
 };
-
-
   return (
     <main className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-      <h1 className="text-5xl font-bold text-green-400 glitch" data-text="Me Contacter">Me Contacter</h1>
+      <h1 className="text-5xl font-bold text-green-400 hero glitch layers" data-text="Me Contacter">Me Contacter</h1>
 
-      <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-4">
-        <p>📧 Email : <a href="mailto:maxencedassaud@gmail.com" className="text-green-400 hover:underline">maxencedassaud@gmail.com</a></p>
+      <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-4 mt-16">
+        <p>📧 Email : <a href="mailto:maxencedassaud@gmail.com" className="mt-16 text-green-400 hover:underline">maxencedassaud@gmail.com</a></p>
         <p>📞 Téléphone : 06 83 94 61 91</p>
         <p>💼 <a href="https://github.com/Maxence86" className="text-green-400 hover:underline">GitHub</a></p>
         <p>💬 <a href="tonserveurdiscord" className="text-green-400 hover:underline">Discord</a></p>

@@ -8,8 +8,8 @@ export default function About() {
         
   
         {/* Présentation */}
-        <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-6">
-          <h2 className="text-3xl text-green-400 font-bold">👨‍💻 Mon parcours</h2>
+        <div className="mt-8 text-left max-w-3xl text-gray-300 space-y-6 mt-16">
+          <h2 className="text-3xl text-green-400 font-bold mt-16">👨‍💻 Mon parcours</h2>
           <p>
             Ancien directeur commercial en reconversion, je me spécialise aujourd’hui dans la cybersécurité, 
             avec une expertise en **Pentesting, Sécurité Réseau et Sécurisation d’Infrastructures**.
